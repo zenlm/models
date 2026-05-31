@@ -344,35 +344,35 @@ export const zen3Guard: ZenModel = {
 // Zen3 Embedding — via /v1/embeddings
 // ---------------------------------------------------------------------------
 
-export const zen3Embedding: ZenModel = {
-  id: 'zen3-embedding',
-  name: 'Zen3 Embedding',
-  fullName: 'Zen3 Embedding — Text Embeddings',
-  description: 'High-quality text embeddings for RAG, search, and classification.',
-  generation: 'zen3',
+export const zenEmbedding8B: ZenModel = {
+  id: 'zen-embedding-8B',
+  name: 'Zen Embedding 8B',
+  fullName: 'Zen Embedding 8B — Text Embeddings',
+  description: 'Top-quality text embeddings for RAG, search, and classification.',
+  generation: 'foundation',
   tier: 'pro max',
   category: 'embedding',
   modalities: ['text', 'embedding'],
   spec: {
-    params: '3072 dimensions',
+    params: '8B',
     activeParams: null,
-    context: 8_000,
+    context: 40_000,
     arch: 'Embedding',
   },
   pricing: { input: 0.39, output: 0.39, cacheRead: null, cacheWrite: null },
-  features: ['8K context window', '3072 dimensions'],
+  features: ['40K context window', '8B parameters', 'GGUF available'],
   status: 'available',
-  huggingface: null,
+  huggingface: 'https://huggingface.co/zenlm/zen-embedding-8B',
   github: null,
   aliases: [],
 }
 
-export const zen3EmbeddingMedium: ZenModel = {
-  id: 'zen3-embedding-medium',
-  name: 'Zen3 Embedding Medium',
-  fullName: 'Zen3 Embedding Medium',
+export const zenEmbedding4B: ZenModel = {
+  id: 'zen-embedding-4B',
+  name: 'Zen Embedding 4B',
+  fullName: 'Zen Embedding 4B',
   description: 'Balanced embedding model for cost-effective retrieval workloads.',
-  generation: 'zen3',
+  generation: 'foundation',
   tier: 'pro',
   category: 'embedding',
   modalities: ['text', 'embedding'],
@@ -385,17 +385,17 @@ export const zen3EmbeddingMedium: ZenModel = {
   pricing: null,
   features: ['40K context window', '4B parameters'],
   status: 'available',
-  huggingface: 'https://huggingface.co/zenlm/zen3-embedding-medium',
+  huggingface: 'https://huggingface.co/zenlm/zen-embedding-4B',
   github: null,
   aliases: [],
 }
 
-export const zen3EmbeddingSmall: ZenModel = {
-  id: 'zen3-embedding-small',
-  name: 'Zen3 Embedding Small',
-  fullName: 'Zen3 Embedding Small',
+export const zenEmbedding06B: ZenModel = {
+  id: 'zen-embedding-0.6B',
+  name: 'Zen Embedding 0.6B',
+  fullName: 'Zen Embedding 0.6B',
   description: 'Lightweight embedding model for high-throughput, low-cost applications.',
-  generation: 'zen3',
+  generation: 'foundation',
   tier: 'pro',
   category: 'embedding',
   modalities: ['text', 'embedding'],
@@ -406,23 +406,23 @@ export const zen3EmbeddingSmall: ZenModel = {
     arch: 'Embedding',
   },
   pricing: null,
-  features: ['32K context window', '0.6B parameters'],
+  features: ['32K context window', '0.6B parameters', 'GGUF available'],
   status: 'available',
-  huggingface: 'https://huggingface.co/zenlm/zen3-embedding-small',
+  huggingface: 'https://huggingface.co/zenlm/zen-embedding-0.6B',
   github: null,
   aliases: [],
 }
 
 // ---------------------------------------------------------------------------
-// Zen3 Reranker — via /v1/rerank
+// Zen Reranker — via /v1/rerank
 // ---------------------------------------------------------------------------
 
-export const zen3Reranker: ZenModel = {
-  id: 'zen3-reranker',
-  name: 'Zen3 Reranker',
-  fullName: 'Zen3 Reranker',
+export const zenReranker8B: ZenModel = {
+  id: 'zen-reranker-8B',
+  name: 'Zen Reranker 8B',
+  fullName: 'Zen Reranker 8B',
   description: 'High-quality reranker for improving retrieval accuracy in RAG pipelines.',
-  generation: 'zen3',
+  generation: 'foundation',
   tier: 'pro max',
   category: 'embedding',
   modalities: ['text', 'embedding'],
@@ -433,19 +433,19 @@ export const zen3Reranker: ZenModel = {
     arch: 'Reranker',
   },
   pricing: null,
-  features: ['40K context window', '8B parameters'],
+  features: ['40K context window', '8B parameters', 'GGUF available'],
   status: 'available',
-  huggingface: 'https://huggingface.co/zenlm/zen3-reranker',
+  huggingface: 'https://huggingface.co/zenlm/zen-reranker-8B',
   github: null,
   aliases: [],
 }
 
-export const zen3RerankerMedium: ZenModel = {
-  id: 'zen3-reranker-medium',
-  name: 'Zen3 Reranker Medium',
-  fullName: 'Zen3 Reranker Medium',
+export const zenReranker4B: ZenModel = {
+  id: 'zen-reranker-4B',
+  name: 'Zen Reranker 4B',
+  fullName: 'Zen Reranker 4B',
   description: 'Balanced reranker for cost-effective retrieval quality improvement.',
-  generation: 'zen3',
+  generation: 'foundation',
   tier: 'pro',
   category: 'embedding',
   modalities: ['text', 'embedding'],
@@ -456,19 +456,19 @@ export const zen3RerankerMedium: ZenModel = {
     arch: 'Reranker',
   },
   pricing: null,
-  features: ['40K context window', '4B parameters'],
+  features: ['40K context window', '4B parameters', 'GGUF available'],
   status: 'available',
-  huggingface: 'https://huggingface.co/zenlm/zen3-reranker-medium',
+  huggingface: 'https://huggingface.co/zenlm/zen-reranker-4B',
   github: null,
   aliases: [],
 }
 
-export const zen3RerankerSmall: ZenModel = {
-  id: 'zen3-reranker-small',
-  name: 'Zen3 Reranker Small',
-  fullName: 'Zen3 Reranker Small',
+export const zenReranker06B: ZenModel = {
+  id: 'zen-reranker-0.6B',
+  name: 'Zen Reranker 0.6B',
+  fullName: 'Zen Reranker 0.6B',
   description: 'Lightweight reranker for high-throughput reranking at minimal cost.',
-  generation: 'zen3',
+  generation: 'foundation',
   tier: 'pro',
   category: 'embedding',
   modalities: ['text', 'embedding'],
@@ -479,9 +479,9 @@ export const zen3RerankerSmall: ZenModel = {
     arch: 'Reranker',
   },
   pricing: null,
-  features: ['40K context window', '0.6B parameters'],
+  features: ['40K context window', '0.6B parameters', 'GGUF available'],
   status: 'available',
-  huggingface: 'https://huggingface.co/zenlm/zen3-reranker-small',
+  huggingface: 'https://huggingface.co/zenlm/zen-reranker-0.6B',
   github: null,
   aliases: [],
 }
@@ -1192,9 +1192,9 @@ export const allModels: ZenModel[] = [
   zen4Coder, zen4CoderFlash, zen4CoderPro,
   // Zen3 production API models (chat)
   zen3Omni, zen3Vl, zen3Nano, zen3Guard,
-  // Zen3 embedding & reranker
-  zen3Embedding, zen3EmbeddingMedium, zen3EmbeddingSmall,
-  zen3Reranker, zen3RerankerMedium, zen3RerankerSmall,
+  // Zen embedding & reranker (size-based, matches hf.co/zenlm)
+  zenEmbedding06B, zenEmbedding4B, zenEmbedding8B,
+  zenReranker06B, zenReranker4B, zenReranker8B,
   // Zen3 image
   zen3Image, zen3ImageMax, zen3ImageDev, zen3ImageFast,
   zen3ImageSdxl, zen3ImagePlayground, zen3ImageSsd, zen3ImageJp,

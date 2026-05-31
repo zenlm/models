@@ -39,9 +39,8 @@ export const families: ModelFamily[] = [
     description: 'Text embeddings and search reranking via API.',
     icon: 'Search',
     models: [
-      'zen3-embedding', 'zen3-embedding-medium', 'zen3-embedding-small',
-      'zen3-reranker', 'zen3-reranker-medium', 'zen3-reranker-small',
-      'zen-embedding', 'zen-reranker',
+      'zen-embedding', 'zen-embedding-0.6B', 'zen-embedding-4B', 'zen-embedding-8B',
+      'zen-reranker', 'zen-reranker-0.6B', 'zen-reranker-4B', 'zen-reranker-8B',
     ],
   },
   {
