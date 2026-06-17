@@ -1,4 +1,4 @@
-# models — AI Assistant Context
+# models
 
 # @zenlm/models
 
