@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="models" width="880"></p>
+
 # @zenlm/models
 
 The canonical Zen LM model catalog — specs, pricing, and families for the complete Zen model family.
