@@ -1181,6 +1181,24 @@ export const zenAgent: ZenModel = {
   aliases: [],
 }
 
+export const zenRouter: ZenModel = {
+  id: 'zen-router',
+  name: 'Zen Router',
+  fullName: 'Zen Router — 0.6B Routing',
+  description: 'Tiny routing model: reads a prompt and picks the best model to answer it. One forward pass emits task class, a route distribution over the model catalog, and a feature embedding.',
+  generation: 'foundation',
+  tier: 'pro',
+  category: 'agents',
+  modalities: ['text'],
+  spec: { params: '0.6B', activeParams: null, context: 32_000, arch: 'Dense' },
+  pricing: null,
+  features: ['Encoder-pooled router', 'Task + route + feature heads', '<50ms CPU / <10ms Metal @ Q4'],
+  status: 'available',
+  huggingface: 'https://huggingface.co/zenlm/zen-router',
+  github: 'https://github.com/zenlm/zen-router',
+  aliases: [],
+}
+
 // ---------------------------------------------------------------------------
 // Collections
 // ---------------------------------------------------------------------------
@@ -1216,6 +1234,8 @@ export const allModels: ZenModel[] = [
   zenEmbedding, zenReranker,
   // Agents
   zenAgent,
+  // Routing
+  zenRouter,
 ]
 
 /** Production API models (served via api.hanzo.ai). */
