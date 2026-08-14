@@ -6,8 +6,14 @@
  *
  * Open-weight entries are honest repackages of permissively-licensed upstreams
  * (Qwen, DeepSeek, MiniMax, IBM Granite, YuE, Wan); each HuggingFace card states
- * its `base_model` and license. Every `huggingface` URL below resolves to a live
- * repo. Served-only SKUs carry `status: 'cloud-only'` with `huggingface: null`.
+ * its `base_model` and license. Served-only SKUs carry `status: 'cloud-only'`
+ * with `huggingface: null`.
+ *
+ * Weights live on HuggingFace, code on GitHub, reports in zenlm/papers — three
+ * separate questions, three fields, each resolving or `null`. A repo is claimed
+ * only where it names the model's HuggingFace id or carries its base_model; a
+ * name that merely rhymes is not evidence, so several entries stay null while
+ * the repo they sound like belongs to a different model.
  */
 
 import type { ZenModel } from './types'
@@ -31,7 +37,8 @@ export const zen5: ZenModel = {
   features: ['1M context', 'MoE 35B/3B active', 'Open GGUF weights'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen5-gguf',
-  github: null,
+  github: 'https://github.com/zenlm/zen5',
+  paper: null,
   aliases: ['zen'],
 }
 
@@ -51,6 +58,7 @@ export const zen5Mini: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen5-mini-gguf',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -70,6 +78,7 @@ export const zen5Coder: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen5-coder-gguf',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -89,6 +98,7 @@ export const zen5Pro: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen5-pro-gguf',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -108,6 +118,7 @@ export const zen5Max: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen5-max-gguf',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -130,7 +141,8 @@ export const zen3Omni: ZenModel = {
   features: ['131K context', 'Text + vision', 'MoE 30B/3B active'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-omni',
-  github: null,
+  github: 'https://github.com/zenlm/zen-omni',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen3-omni_whitepaper.pdf',
   aliases: [],
 }
 
@@ -149,7 +161,8 @@ export const zen3Vl: ZenModel = {
   features: ['128K context', 'Text + vision', 'Low cost'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-vl',
-  github: null,
+  github: 'https://github.com/zenlm/zen-vl',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen3-vl_whitepaper.pdf',
   aliases: [],
 }
 
@@ -169,6 +182,7 @@ export const zen3Guard: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-guard',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen3-guard_whitepaper.pdf',
   aliases: [],
 }
 
@@ -191,6 +205,7 @@ export const zen5Embedding: ZenModel = {
   status: 'cloud-only',
   huggingface: null,
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -210,6 +225,7 @@ export const zen3Embedding: ZenModel = {
   status: 'cloud-only',
   huggingface: null,
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen3-embedding_whitepaper.pdf',
   aliases: [],
 }
 
@@ -229,6 +245,7 @@ export const zenRerank: ZenModel = {
   status: 'cloud-only',
   huggingface: null,
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -252,6 +269,7 @@ export const zenImage: ZenModel = {
   status: 'cloud-only',
   huggingface: null,
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -271,6 +289,7 @@ export const zenVoice: ZenModel = {
   status: 'cloud-only',
   huggingface: null,
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-voice-clone.pdf',
   aliases: [],
 }
 
@@ -290,6 +309,7 @@ export const zenMusic: ZenModel = {
   status: 'cloud-only',
   huggingface: null,
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -307,7 +327,8 @@ export const zenFoley: ZenModel = {
   features: ['Text-to-sound-effects', 'Per-unit billing'],
   status: 'cloud-only',
   huggingface: null,
-  github: null,
+  github: 'https://github.com/zenlm/zen-foley',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-foley.pdf',
   aliases: [],
 }
 
@@ -326,7 +347,8 @@ export const zenVideo: ZenModel = {
   features: ['Text-to-video', 'Per-unit billing'],
   status: 'cloud-only',
   huggingface: null,
-  github: null,
+  github: 'https://github.com/zenlm/zen-video',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-video.pdf',
   aliases: [],
 }
 
@@ -349,6 +371,7 @@ export const zen3Nano: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-nano',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen3-nano_whitepaper.pdf',
   aliases: [],
 }
 
@@ -366,7 +389,8 @@ export const zenNano: ZenModel = {
   features: ['40K context', '0.6B dense', 'Edge / mobile'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-nano-0.6b',
-  github: null,
+  github: 'https://github.com/zenlm/zen-nano',
+  paper: 'https://github.com/zenlm/zen-nano/blob/main/paper/paper.pdf',
   aliases: [],
 }
 
@@ -384,7 +408,8 @@ export const zenEco: ZenModel = {
   features: ['262K context', '4B dense'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-eco-4b-instruct',
-  github: null,
+  github: 'https://github.com/zenlm/zen-eco',
+  paper: 'https://github.com/zenlm/zen-eco/blob/main/paper/paper.pdf',
   aliases: [],
 }
 
@@ -406,7 +431,8 @@ export const zenEmbedding8B: ZenModel = {
   features: ['40K context', '8B embeddings'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-embedding-8B',
-  github: null,
+  github: 'https://github.com/zenlm/zen-embedding',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-embeddings-retrieval.pdf',
   aliases: [],
 }
 
@@ -424,7 +450,8 @@ export const zenEmbedding4B: ZenModel = {
   features: ['40K context', '4B embeddings'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-embedding-4B',
-  github: null,
+  github: 'https://github.com/zenlm/zen-embedding',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-embeddings-retrieval.pdf',
   aliases: [],
 }
 
@@ -442,7 +469,8 @@ export const zenEmbedding06B: ZenModel = {
   features: ['32K context', '0.6B embeddings'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-embedding-0.6B',
-  github: null,
+  github: 'https://github.com/zenlm/zen-embedding',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-embeddings-retrieval.pdf',
   aliases: [],
 }
 
@@ -460,7 +488,8 @@ export const zenReranker8B: ZenModel = {
   features: ['40K context', '8B reranker'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-reranker-8B',
-  github: null,
+  github: 'https://github.com/zenlm/zen-reranker',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-reranker.pdf',
   aliases: [],
 }
 
@@ -478,7 +507,8 @@ export const zenReranker4B: ZenModel = {
   features: ['40K context', '4B reranker'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-reranker-4B',
-  github: null,
+  github: 'https://github.com/zenlm/zen-reranker',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-reranker.pdf',
   aliases: [],
 }
 
@@ -496,7 +526,8 @@ export const zenReranker06B: ZenModel = {
   features: ['40K context', '0.6B reranker'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-reranker-0.6B',
-  github: null,
+  github: 'https://github.com/zenlm/zen-reranker',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-reranker.pdf',
   aliases: [],
 }
 
@@ -519,6 +550,7 @@ export const zen3Image: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-image',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -538,6 +570,7 @@ export const zen3Tts: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-tts',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -557,6 +590,7 @@ export const zen3Asr: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen3-asr',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -574,7 +608,8 @@ export const zenMusician: ZenModel = {
   features: ['Text-to-music', 'Open weights'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-musician',
-  github: null,
+  github: 'https://github.com/zenlm/zen-musician',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-musician.pdf',
   aliases: [],
 }
 
@@ -598,6 +633,7 @@ export const zenAgent4b: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-agent-4b',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-agent.pdf',
   aliases: [],
 }
 
@@ -617,6 +653,7 @@ export const zenRouter: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-router',
   github: 'https://github.com/zenlm/zen-router',
+  paper: null,
   aliases: [],
 }
 
@@ -635,6 +672,7 @@ export const zenMedical: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-medical',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-medical.pdf',
   aliases: [],
 }
 
@@ -653,6 +691,7 @@ export const zenLegal: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-legal',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-legal-ai.pdf',
   aliases: [],
 }
 
@@ -671,6 +710,7 @@ export const zenFinance: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-finance',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-financial-ai.pdf',
   aliases: [],
 }
 
@@ -689,6 +729,7 @@ export const zenSql: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-sql',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -707,6 +748,7 @@ export const zenTranslate: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-translate',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -725,6 +767,7 @@ export const zenMultilingual: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-multilingual',
   github: null,
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-multilingual.pdf',
   aliases: [],
 }
 
@@ -746,7 +789,8 @@ export const zenWorld: ZenModel = {
   features: ['Text-to-video', '14B diffusion'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-world',
-  github: null,
+  github: 'https://github.com/zenlm/zen-world',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-world.pdf',
   aliases: [],
 }
 
@@ -764,7 +808,8 @@ export const zenDirector: ZenModel = {
   features: ['Text + image to video', '5B diffusion'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-director',
-  github: null,
+  github: 'https://github.com/zenlm/zen-director',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-director.pdf',
   aliases: [],
 }
 
@@ -783,6 +828,7 @@ export const zenImageEdit: ZenModel = {
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-image-edit',
   github: null,
+  paper: null,
   aliases: [],
 }
 
@@ -800,7 +846,8 @@ export const zen3d: ZenModel = {
   features: ['Image-to-3D', 'Open weights'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-3d',
-  github: null,
+  github: 'https://github.com/zenlm/zen-3d',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-3d.pdf',
   aliases: [],
 }
 
@@ -818,7 +865,8 @@ export const zenDubLive: ZenModel = {
   features: ['Live dubbing', 'Text-to-speech'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-dub-live',
-  github: null,
+  github: 'https://github.com/zenlm/zen-dub-live',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-dub-live_whitepaper.pdf',
   aliases: [],
 }
 
@@ -837,7 +885,8 @@ export const zenDesignerInstruct: ZenModel = {
   features: ['131K context', 'Text + vision', 'MoE 235B/22B active'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-designer-235b-a22b-instruct',
-  github: null,
+  github: 'https://github.com/zenlm/zen-designer-instruct',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-designer-instruct_whitepaper.pdf',
   aliases: [],
 }
 
@@ -856,7 +905,8 @@ export const zenDesignerThinking: ZenModel = {
   features: ['131K context', 'Text + vision', 'Reasoning'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-designer-235b-a22b-thinking',
-  github: null,
+  github: 'https://github.com/zenlm/zen-designer-thinking',
+  paper: 'https://github.com/zenlm/papers/blob/main/zen-designer-thinking_whitepaper.pdf',
   aliases: [],
 }
 
@@ -875,7 +925,8 @@ export const zenDesignerGguf: ZenModel = {
   features: ['GGUF weights', 'Text + vision', 'MoE 235B/22B active'],
   status: 'available',
   huggingface: 'https://huggingface.co/zenlm/zen-designer-gguf',
-  github: null,
+  github: 'https://github.com/zenlm/zen-designer',
+  paper: null,
   aliases: [],
 }
 

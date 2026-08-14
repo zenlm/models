@@ -100,7 +100,7 @@ export interface ZenModel {
   /** GitHub URL (null if none) */
   github: string | null
   /** Technical paper / report URL (null if none) */
-  paper?: string | null
+  paper: string | null
   /** Brand aliases (e.g., zen → zen5) */
   aliases: string[]
 }
