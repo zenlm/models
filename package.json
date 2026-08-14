@@ -1,6 +1,6 @@
 {
   "name": "@zenlm/models",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Zen model catalog — model specs, pricing, and families for the Zen LM model family",
   "keywords": [
     "ai",
